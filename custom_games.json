@@ -1,0 +1,22 @@
+[
+  {
+    "v": {
+      "tn": "Lakers",
+      "tc": "Los Angeles"
+    },
+    "h": {
+      "tn": "Nuggets",
+      "tc": "Denver"
+    }
+  },
+  {
+    "v": {
+      "tn": "Heat",
+      "tc": "Miami"
+    },
+    "h": {
+      "tn": "Celtics",
+      "tc": "Boston"
+    }
+  }
+]
