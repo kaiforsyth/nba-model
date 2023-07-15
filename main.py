@@ -45,7 +45,9 @@ def createTodaysGames(games, df, odds):
             away_team_odds.append(game_odds[away_team]['money_line_odds'])
 
         else:
-            todays_games_uo.append(input(home_team + ' vs ' + away_team + ': '))
+            todays_games_uo.append(
+                input(home_team + ' vs ' + away_team + ': '))
+
             home_team_odds.append(input(home_team + ' odds: '))
             away_team_odds.append(input(away_team + ' odds: '))
 
@@ -63,7 +65,8 @@ def createTodaysGames(games, df, odds):
         )].sort_values('Date', ascending=False).head(1)['Date'].iloc[0]
         home_days_off = timedelta(days=1) + datetime.today() - last_home_date
         away_days_off = timedelta(days=1) + datetime.today() - last_away_date
-        # print(f"{away_team} days off: {away_days_off.days} @ {home_team} days off: {home_days_off.days}")
+        print(
+            f"{away_team} days off: {away_days_off.days} @ {home_team} days off: {home_days_off.days}")
 
         home_team_days_rest.append(home_days_off.days)
         away_team_days_rest.append(away_days_off.days)
