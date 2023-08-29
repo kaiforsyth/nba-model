@@ -52,17 +52,11 @@ def createTodaysGames(games, df, odds):
             away_team_odds.append(input(away_team + ' odds: '))
 
         # calculate days rest for both teams
-        def dateparse(x): return datetime.strptime(x, '%d/%m/%Y %H:%M')
-        schedule_df = pd.read_csv(
-            'Data/nba-2022-UTC.csv', parse_dates=['Date'], date_parser=dateparse)
-        home_games = schedule_df[(schedule_df['Home Team'] == home_team) | (
-            schedule_df['Away Team'] == home_team)]
-        away_games = schedule_df[(schedule_df['Home Team'] == away_team) | (
-            schedule_df['Away Team'] == away_team)]
-        last_home_date = home_games.loc[schedule_df['Date'] <= datetime.today(
-        )].sort_values('Date', ascending=False).head(1)['Date'].iloc[0]
-        last_away_date = away_games.loc[schedule_df['Date'] <= datetime.today(
-        )].sort_values('Date', ascending=False).head(1)['Date'].iloc[0]
+        schedule_df = pd.read_csv('Data/nba-2022-UTC.csv', parse_dates=['Date'], date_format='%d/%m/%Y %H:%M')
+        home_games = schedule_df[(schedule_df['Home Team'] == home_team) | (schedule_df['Away Team'] == home_team)]
+        away_games = schedule_df[(schedule_df['Home Team'] == away_team) | (schedule_df['Away Team'] == away_team)]
+        last_home_date = home_games.loc[schedule_df['Date'] <= datetime.today()].sort_values('Date',ascending=False).head(1)['Date'].iloc[0]
+        last_away_date = away_games.loc[schedule_df['Date'] <= datetime.today()].sort_values('Date',ascending=False).head(1)['Date'].iloc[0]
         home_days_off = timedelta(days=1) + datetime.today() - last_home_date
         away_days_off = timedelta(days=1) + datetime.today() - last_away_date
         print(
