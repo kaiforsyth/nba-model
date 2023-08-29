@@ -2,6 +2,8 @@ def american_to_decimal(american_odds):
     """
     Converts American odds to decimal odds (European odds).
     """
+    if american_odds is None:
+        return None
     american_odds = int(american_odds)
     if american_odds >= 100:
         decimal_odds = (american_odds / 100)
@@ -13,6 +15,8 @@ def calculate_kelly_criterion(american_odds, model_prob):
     """
     Calculates the fraction of the bankroll to be wagered on each bet
     """
+    if american_odds is None:
+        return 0
     american_odds = int(american_odds)
     decimal_odds = american_to_decimal(american_odds)
     bankroll_fraction = round((100 * (decimal_odds * model_prob - (1 - model_prob))) / decimal_odds, 2)
