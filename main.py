@@ -1,9 +1,11 @@
 import argparse
 from datetime import datetime, timedelta
-import time
-from colorama import Fore, Style
+
 import pandas as pd
 import tensorflow as tf
+from colorama import Fore, Style
+
+from src.DataProviders.SbrOddsProvider import SbrOddsProvider
 from src.Predict import NN_Runner, XGBoost_Runner
 from src.Utils.Dictionaries import team_index_current
 from src.Utils.tools import create_todays_games_from_odds, get_json_data, to_data_frame, get_todays_games_json, create_todays_games
@@ -28,7 +30,7 @@ def createTodaysGames(games, df, odds):
     todays_games_uo = []
     home_team_odds = []
     away_team_odds = []
-    # todo: get the days rest for current games
+
     home_team_days_rest = []
     away_team_days_rest = []
 
@@ -89,9 +91,9 @@ def main():
         if len(games) == 0:
             print("No games found.")
             return
-        if ((games[0][0]+':'+games[0][1]) not in list(odds.keys())):
-            print(games[0][0]+':'+games[0][1])
-            print(Fore.RED, "--------------Games list not up to date for todays games!!! Scraping disabled until list is updated.--------------")
+        if (games[0][0] + ':' + games[0][1]) not in list(odds.keys()):
+            print(games[0][0] + ':' + games[0][1])
+            print(Fore.RED,"--------------Games list not up to date for todays games!!! Scraping disabled until list is updated.--------------")
             print(Style.RESET_ALL)
             odds = None
         else:
