@@ -1,22 +1,62 @@
 [
   {
     "v": {
-      "tn": "Lakers",
-      "tc": "Los Angeles"
-    },
-    "h": {
       "tn": "Nuggets",
       "tc": "Denver"
+    },
+    "h": {
+      "tn": "Thunder",
+      "tc": "Oklahoma City"
     }
   },
   {
     "v": {
-      "tn": "Heat",
-      "tc": "Miami"
+      "tn": "Hawks",
+      "tc": "Atlanta"
     },
     "h": {
-      "tn": "Celtics",
-      "tc": "Boston"
+      "tn": "Bucks",
+      "tc": "Milwaukee"
+    }
+  },
+  {
+    "v": {
+      "tn": "Warriors",
+      "tc": "Golden State"
+    },
+    "h": {
+      "tn": "Rockets",
+      "tc": "Houston"
+    }
+  },
+  {
+    "v": {
+      "tn": "Trail Blazers",
+      "tc": "Portland"
+    },
+    "h": {
+      "tn": "76ers",
+      "tc": "Philadelphia"
+    }
+  },
+  {
+    "v": {
+      "tn": "Spurs",
+      "tc": "San Antonio"
+    },
+    "h": {
+      "tn": "Clippers",
+      "tc": "Los Angeles"
+    }
+  },
+  {
+    "v": {
+      "tn": "Lakers",
+      "tc": "Los Angeles"
+    },
+    "h": {
+      "tn": "Kings",
+      "tc": "Sacramento"
     }
   }
-]
+ ]
